@@ -1,0 +1,81 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html lang="en">
+  <head>
+        <script src='lib/davidshimjs-qrcodejs-04f46c6/qrcode.min.js'></script>
+        <script src='lib/html5-qrcode/minified/html5-qrcode.min.js'></script>
+  </head>
+</html>
+<script>
+qr48 = function qr48( u,pos ) {
+
+v = u.padStart(8,"6");
+thisDiv = pos + "_";
+
+$black = "#00000";
+
+var qrcode = new QRCode(document.getElementById(pos), {
+        text: u,
+        width: 80,
+        height: 80,
+        colorDark :  "#000000",
+        colorLight : "#ffffff",
+        correctLevel : QRCode.CorrectLevel.H
+});
+
+eval(thisDiv).style="border:6px solid #" + u.substr(0,6);
+
+}
+/*
+for (x = 0; x < 2; x++)
+  {
+  for (y = 0 ; y < 7; y++){
+  
+   u = Math.random().toString(16).split(".")[1] + Math.random().toString(16).split(".")[1];
+//  console.log("a" + x + "" + y)
+  qr48(u.substr(0,16),"a" + x + "" + y);
+  }
+};
+*/
+function tableCreate() {
+  //body reference 
+  var body = document.getElementsByTagName("body")[0];
+
+  // create elements <table> and a <tbody>
+  var tbl = document.createElement("table");
+  var tblBody = document.createElement("tbody");
+
+  // cells creation
+  for (var j = 0; j < 2; j++) {
+    // table row creation
+    var row = document.createElement("tr");
+
+    for (var i = 0; i < 7; i++) {
+      var cell = document.createElement("td");
+      cell.setAttribute("id", "b" + j + "" + i + "_");
+      var div = document.createElement("div");
+      div.setAttribute("id", "b" + j + "" + i);
+      cell.appendChild(div);
+      row.appendChild(cell);
+    }
+    tblBody.appendChild(row);
+  }
+
+  tbl.appendChild(tblBody);
+  body.appendChild(tbl);
+  tbl.setAttribute("border", "2");
+}
+
+tableCreate();
+
+for (x = 0; x < 2; x++)
+  {
+  for (y = 0 ; y < 7; y++){
+
+   u = Math.random().toString(16).split(".")[1] + Math.random().toString(16).split(".")[1];
+//  console.log("b" + x + "" + y)
+  qr48(u.substr(0,16),"b" + x + "" + y);
+  }
+};
+
+
+</script>
