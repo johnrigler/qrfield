@@ -9,3 +9,5 @@ codes. You are supposed to cut them up with scissors or a paper cutter.
 I used the better random number generator. This is my own invention, which I informally presented at Eth Denver 2024. Don't sue me to try to get control. 
 How would that even work? People can just print this off from their computer. If you intend to create a bunch of these and cut them into individual squares,
 then make sure to always refresh the page between printings.
+
+<img src="https://github.com/johnrigler/qrfield/blob/main/Screen%20Shot%202024-08-17%20at%2010.52.54%20PM.png">
